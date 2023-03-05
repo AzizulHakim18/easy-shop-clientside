@@ -4,15 +4,23 @@ import { legacy_createStore as createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { getAllProductsReducers } from './Reducers/productReducers';
 import thunk from 'redux-thunk';
+import { CartReducers } from './Reducers/CartReducers';
 
 
 
 const finalReducer = combineReducers({
-    getAllProductsReducers: getAllProductsReducers
+    getAllProductsReducers: getAllProductsReducers,
+    CartReducers: CartReducers
 })
 
+const cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
+console.log(cartItems);
 
-const initialState = {}
+const initialState = {
+    CartReducers: {
+        cartItems: cartItems
+    }
+}
 
 const composeEnhancers = composeWithDevTools({});
 

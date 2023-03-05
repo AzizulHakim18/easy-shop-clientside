@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../Actions/CartActions";
 
 
 const Product = ({ product }) => {
@@ -6,6 +8,12 @@ const Product = ({ product }) => {
     const { category, img, name, price, ratings } = product;
 
     const [quantity, setQuantity] = useState("");
+
+    const dispatch = useDispatch()
+    const addtocart = () => {
+        dispatch(addToCart(product, quantity))
+    }
+
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -30,7 +38,7 @@ const Product = ({ product }) => {
                                 })}
                             </select>
                         </div>
-                        <button className="btn btn-outline btn-secondary">Add to Cart</button>
+                        <button className="btn btn-outline btn-secondary" onClick={addtocart}>Add to Cart</button>
                     </div>
 
                 </div>

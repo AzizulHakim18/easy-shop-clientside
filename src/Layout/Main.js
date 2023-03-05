@@ -6,7 +6,9 @@ import Header from '../Sheared/Header';
 const Main = () => {
     return (
         <div>
-            <Header></Header>
+            <div className='sticky top-0 z-10'>
+                <Header></Header>
+            </div>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

@@ -21,7 +21,7 @@ const LogIn = () => {
         const email = e.target.email.value
         const password = e.target.password.value
 
-        console.log(email, password);
+        console.log(email);
         signin(email, password)
             .then(result => {
                 toast.success("Log in successfully")
