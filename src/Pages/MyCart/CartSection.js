@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import CheckOut from '../CheckOuts/CheckOut';
 import CartDetails from './CartDetails';
 
 const CartSection = () => {
@@ -49,7 +50,8 @@ const CartSection = () => {
                     <div>
                         <h1 className='text-3xl font-extrabold text-red-700'>Total Amount</h1>
                         <h1 className='text-2xl font-bold'>BDT {totalProductsPrice}</h1>
-                        <button className="btn btn-outline btn-secondary">Pay Now</button>
+                        {/* <button className="btn btn-outline btn-secondary">Pay Now</button> */}
+                        <CheckOut totalProductsPrice={totalProductsPrice}></CheckOut>
                     </div>
                 </div>
             </div>
