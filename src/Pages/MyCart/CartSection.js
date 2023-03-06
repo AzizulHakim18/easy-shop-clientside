@@ -7,7 +7,6 @@ const CartSection = () => {
 
 
     const cartstate = useSelector(state => state.CartReducers)
-
     const cartItems = cartstate.cartItems;
 
 
@@ -15,6 +14,8 @@ const CartSection = () => {
         return x + y.price;
     }, 0);
     console.log(totalProductsPrice);
+
+
     return (
 
 

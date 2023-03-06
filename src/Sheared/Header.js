@@ -38,6 +38,7 @@ const Header = () => {
                             <li><Link to="/about">About</Link></li>
                             <li><Link to="/blog">Blog</Link></li>
                             <li><Link to="/contact">Contact Us</Link></li>
+                            <li><Link to="/myorders">My Orders</Link></li>
                             {
                                 user?.uid ? <div className='flex justify-center items-center'><li><Link onClick={handleLogout} to="/">Log Out</Link></li> </div> : <div><li><Link to="/login">Log In</Link></li></div>
                             }
@@ -51,6 +52,7 @@ const Header = () => {
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
+                        <li><Link to="/myorders">My Orders</Link></li>
                         {
                             user?.uid ? <div className='flex justify-center items-center'><li><Link onClick={handleLogout} to="/">Log Out</Link></li> </div> : <div><li><Link to="/login">Log In</Link></li></div>
                         }

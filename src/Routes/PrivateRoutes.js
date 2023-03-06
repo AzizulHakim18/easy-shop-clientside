@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../Context/UserContexts';
-import LoadingSpiner from '../Pages/Sheared/LoadingSpiner';
+import { AuthContext } from '../Context/UserContext';
+import LoadingSpiner from '../Sheared/LoadingSpiner';
+
 
 const PrivateRoutes = ({ children }) => {
 
