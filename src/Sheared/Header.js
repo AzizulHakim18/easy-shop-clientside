@@ -17,7 +17,14 @@ const Header = () => {
     }
 
     const cartstate = useSelector(state => state.CartReducers)
+    const cartItems = cartstate.cartItems;
+    const totalProductsPrice = cartItems.reduce((x, y) => {
+        return x + y.price;
+    }, 0);
     console.log(cartstate.cartItems);
+
+
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -51,7 +58,7 @@ const Header = () => {
                 </div>
                 <div className='flex justify-center items-center'>
 
-                    <div className="flex-none">
+                    <div className="flex-none mx-4">
                         <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle">
                                 <div className="indicator">
@@ -61,10 +68,10 @@ const Header = () => {
                             </label>
                             <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
                                 <div className="card-body">
-                                    <span className="font-bold text-lg">{cartstate.cartItems.length}Items</span>
-                                    <span className="text-info">Subtotal: $999</span>
+                                    <span className="font-bold text-lg">{cartstate.cartItems.length} Items</span>
+                                    <span className="text-info font-bold">Subtotal: BDT {totalProductsPrice}</span>
                                     <div className="card-actions">
-                                        <button className="btn btn-primary btn-block">View cart</button>
+                                        <Link to="/mycart" className="btn btn-primary btn-block">View cart</Link>
                                     </div>
                                 </div>
                             </div>

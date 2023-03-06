@@ -5,7 +5,8 @@ export const addToCart = (product, quantity) => (dispatch, getState) => {
 
     const cartItem = {
         name: product.name,
-        quantity: quantity,
+        _id: product._id,
+        productQuantity: +quantity,
         img: product.img,
         prices: product.price,
         price: product.price * quantity
@@ -15,5 +16,12 @@ export const addToCart = (product, quantity) => (dispatch, getState) => {
 
     const cartItems = getState().CartReducers.cartItems
     console.log(cartItems);
-    console.log(localStorage.setItem('cartItems', JSON.stringify(cartItems)));
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+}
+
+export const deleteFromCart = (product) => (dispatch, getState) => {
+
+    dispatch({ type: "DELETE_FROM_CART", payload: product })
+    const cartItems = getState().CartReducers.cartItems
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
 }

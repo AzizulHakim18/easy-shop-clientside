@@ -34,7 +34,7 @@ const Product = ({ product }) => {
                             <p className='lg:text-xl font-semibold '>Quantity:</p>
                             <select className='m-2 p-2 border border-rose-600 rounded-lg lg:text-xl font-medium' value={quantity} onChange={(e) => { setQuantity(e.target.value) }}>
                                 {[...Array(5).keys()].map((x, i) => {
-                                    return <option value={i + 1}>{i + 1}</option>
+                                    return <option value={i}>{i}</option>
                                 })}
                             </select>
                         </div>
