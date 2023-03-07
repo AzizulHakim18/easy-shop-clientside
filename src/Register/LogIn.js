@@ -34,7 +34,7 @@ const LogIn = () => {
     // Google Signin
     const handleGoogleSignIn = () => {
         signInWithGoogle().then(result => {
-            console.log(result.user)
+            console.log(result.user.uid)
             navigate(from, { replace: true })
         })
 

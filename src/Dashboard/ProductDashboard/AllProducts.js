@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../Context/UserContext';
 import AllProduct from './AllProduct';
 
 const AllProducts = () => {
 
-
+    const { user } = useContext(AuthContext);
+    const uid = user?.uid
+    const adminId = "PpwhQMtA6mfSi6QtJU5YwIOpUOT2";
+    console.log(uid,);
 
     const [products, setProducts] = useState([]);
 
@@ -20,22 +24,28 @@ const AllProducts = () => {
 
 
     const handleDelete = id => {
-        const procced = window.confirm("Are you sure to delete this ?")
-        if (procced) {
-            fetch(`http://localhost:5000/getallproducts/${id}`, {
-                method: "DELETE"
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    if (data.deletedCount > 0) {
-                        toast.success("Deleted successfully")
-                        const remaining = products.filter(x => x._id !== id)
-                        setProducts(remaining)
-                        window.location.reload(false);
-                    }
+        if (adminId == uid) {
+            const procced = window.confirm("Are you sure to delete this ?")
+            if (procced) {
+                fetch(`http://localhost:5000/getallproducts/${id}`, {
+                    method: "DELETE"
                 })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            toast.success("Deleted successfully")
+                            const remaining = products.filter(x => x._id !== id)
+                            setProducts(remaining)
+                            window.location.reload(false);
+                        }
+                    })
+            }
         }
+        else {
+            toast.error("Sorry only admin can delete the products.Thank You")
+        }
+
     }
 
     return (
