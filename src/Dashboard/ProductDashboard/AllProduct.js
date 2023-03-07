@@ -3,7 +3,7 @@ import React from 'react';
 const AllProduct = ({ product, handleDelete }) => {
 
 
-    const { img, name, price, ratings, category, _id } = product
+    const { img, name, price, _id } = product
 
     return (
         <div>
