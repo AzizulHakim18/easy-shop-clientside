@@ -31,7 +31,7 @@ const CheckOut = ({ totalProductsPrice }) => {
         }
         console.log(order);
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://easy-shop-serverside.vercel.app/orders', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

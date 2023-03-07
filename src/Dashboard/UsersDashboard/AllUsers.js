@@ -6,7 +6,7 @@ const AllUsers = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders`
+        const url = `https://easy-shop-serverside.vercel.app/orders`
         fetch(url)
             .then(res => res.json())
             .then(data => {

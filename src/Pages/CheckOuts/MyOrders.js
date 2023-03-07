@@ -12,7 +12,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://easy-shop-serverside.vercel.app/orders`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])

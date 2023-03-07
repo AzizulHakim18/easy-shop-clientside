@@ -14,7 +14,7 @@ const AllProducts = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/getallproducts`
+        const url = `https://easy-shop-serverside.vercel.app/getallproducts`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -27,7 +27,7 @@ const AllProducts = () => {
         if (adminId == uid) {
             const procced = window.confirm("Are you sure to delete this ?")
             if (procced) {
-                fetch(`http://localhost:5000/getallproducts/${id}`, {
+                fetch(`https://easy-shop-serverside.vercel.app/getallproducts/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

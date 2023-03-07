@@ -28,7 +28,7 @@ const Products = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/getallproducts?page=${page}&size=${size}`
+        const url = `https://easy-shop-serverside.vercel.app/getallproducts?page=${page}&size=${size}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -40,7 +40,7 @@ const Products = () => {
 
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/getallproductscount')
+    //     fetch('https://easy-shop-serverside.vercel.app/getallproductscount')
     //         .then(res => res.json())
     //         .then(data => setCount(data.count))
     // }, [])

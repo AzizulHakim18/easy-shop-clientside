@@ -18,7 +18,7 @@ const AddProducts = () => {
             img, name, category, price, ratings, details
         }
         console.log(productsDetails);
-        fetch('http://localhost:5000/getallproducts', {
+        fetch('https://easy-shop-serverside.vercel.app/getallproducts', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
