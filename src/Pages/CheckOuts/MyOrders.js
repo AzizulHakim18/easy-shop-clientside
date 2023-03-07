@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/UserContext';
 import Order from './Order';
-import './MyOrders.css'
+
 
 
 const MyOrders = () => {

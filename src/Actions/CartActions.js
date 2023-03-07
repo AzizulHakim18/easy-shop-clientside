@@ -8,8 +8,8 @@ export const addToCart = (product, quantity) => (dispatch, getState) => {
         _id: product._id,
         productQuantity: +quantity,
         img: product.img,
-        prices: product.price,
-        price: product.price * quantity
+        prices: +product.price,
+        price: +product.price * quantity
     }
 
     dispatch({ type: 'ADD_TO_CART', payload: cartItem })

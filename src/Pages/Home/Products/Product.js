@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../Actions/CartActions";
 
@@ -11,7 +12,15 @@ const Product = ({ product }) => {
 
     const dispatch = useDispatch()
     const addtocart = () => {
-        dispatch(addToCart(product, quantity))
+
+        if (quantity < 1) {
+            toast.error('Please add quantity first')
+        }
+        else {
+            dispatch(addToCart(product, quantity))
+            toast.success('Successfully Added to cart')
+        }
+
     }
 
     return (
