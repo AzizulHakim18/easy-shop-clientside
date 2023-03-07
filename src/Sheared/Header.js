@@ -35,10 +35,11 @@ const Header = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
+
                             <li><Link to="/blog">Blog</Link></li>
                             <li><Link to="/contact">Contact Us</Link></li>
                             <li><Link to="/myorders">My Orders</Link></li>
+                            <li><Link to="/dashboard">Dashboard</Link></li>
                             {
                                 user?.uid ? <div className='flex justify-center items-center'><li><Link onClick={handleLogout} to="/">Log Out</Link></li> </div> : <div><li><Link to="/login">Log In</Link></li></div>
                             }
@@ -49,10 +50,11 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
+
                         <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                         <li><Link to="/myorders">My Orders</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                         {
                             user?.uid ? <div className='flex justify-center items-center'><li><Link onClick={handleLogout} to="/">Log Out</Link></li> </div> : <div><li><Link to="/login">Log In</Link></li></div>
                         }

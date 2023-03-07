@@ -63,7 +63,7 @@ const Products = () => {
                     )}
                 </div>
             </div>
-            <div className='pagination'>
+            <div className='pagination text-center'>
                 <p className='text-xl font-semibold '>Currently selected page: {page} & size: {size}</p>
                 {
                     [...Array(pages).keys()].map(number => <button

@@ -5,7 +5,7 @@ const Contact = () => {
 
 
     return (
-        <div>
+        <div className='w-10/12 mx-auto'>
             <section id="contact">
                 <div class="contact container">
                     <div class="map">

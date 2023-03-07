@@ -1,28 +1,11 @@
 import React from 'react';
-// import './About.css'
+import { BiAtom } from "react-icons/bi";
+import './About.css'
 const About = () => {
     return (
         <div>
-            <div className='h-screen w-screen flex justify-center items-center'>
-                {/* <section class="animation_loader">
-                    <div>
-                        <div>
-                            <div>
-                                <div>
-                                    <div>
-                                        <div>
-                                            <div>
-                                                <div>
-                                                    <div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
+            <div className='h-screen w-screen flex justify-center items-center skills-icon'>
+                <div class="hero text-5xl font-medium "> <BiAtom></BiAtom></div>
             </div>
         </div>
     );
